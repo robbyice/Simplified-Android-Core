@@ -27,10 +27,10 @@
       android:name="org.nypl.simplified.main.MainActivity"
       android:exported="true"
       android:launchMode="singleTop">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
+<!--      <intent-filter>-->
+<!--        <action android:name="android.intent.action.MAIN" />-->
+<!--        <category android:name="android.intent.category.LAUNCHER" />-->
+<!--      </intent-filter>-->
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
 
@@ -38,6 +38,16 @@
         <category android:name="android.intent.category.BROWSABLE" />
 
         <data android:scheme="simplified-vanilla-oauth" />
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".catalog.CatalogActivity"
+        android:launchMode="singleTop"
+        android:icon="@drawable/profile_icon">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
 

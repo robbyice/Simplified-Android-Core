@@ -1,4 +1,10 @@
+apply plugin: 'kotlin-kapt'
+
 android {
+  buildFeatures {
+    dataBinding true
+  }
+
   defaultConfig {
     versionName = project.version
     versionCode = calculateVersionCode(project)
@@ -33,6 +39,28 @@ dependencies {
   annotationProcessor libs.google.auto.value.processor
 
   implementation libs.nypl.theme
+
+  implementation libs.moshi
+  implementation libs.moshi.kotlin
+  implementation libs.retrofit2
+  implementation libs.retrofit2.moshi
+
+  //RepeatOnLifecycle API for coroutines
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02"
+
+  testImplementation libs.logback.android
+  testImplementation libs.junit
+  testImplementation libs.robolectric
+
+  //Coroutine testing
+  testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1'
+
+  //Mockito
+  testImplementation 'org.mockito:mockito-core:3.8.0'
+  testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+
+  //Assertions
+  testImplementation 'org.amshove.kluent:kluent-android:1.68'
 
   vanillaWithProfilesImplementation project(":simplified-accounts-source-filebased")
 }
